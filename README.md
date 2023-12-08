@@ -17,5 +17,5 @@ studying. The flashcards can be liked, saved and stored in decks, giving the stu
 to review the content.
 ## Work in progress 🚧
 - https://github.com/JoaquinCortezHub/Studycards/issues/1
-- 
+- https://github.com/JoaquinCortezHub/Studycards/issues/3
 
