@@ -16,5 +16,5 @@ which class you're studying for and adjust the output to give you precise respon
 studying. The flashcards can be liked, saved and stored in decks, giving the students the ability to go back to their notes 
 to review the content.
 ## Work in progress 🚧
-- 
+- [] #1
 
