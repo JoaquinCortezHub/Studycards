@@ -1,5 +1,6 @@
 # Studycards 👨‍🎓
-AI powered website that allows students to input  study-related content to convert it into interactive flashcards.
+![Frame 3](https://github.com/JoaquinCortezHub/Studycards/assets/141943195/6debdb32-a051-444e-86ac-8ab6ab11002e)
+
 ## Problem Statement 🧠
 An issue I began experiencing when I got into college was that sometimes, it's hard to remember theory just by 
 reading it and trying to memorize it. A lot of students (myself included) are visual learners, they need to interact
