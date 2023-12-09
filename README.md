@@ -15,6 +15,15 @@ Studycards helps students study complex theory and hard exercises in a visual wa
 which class you're studying for and adjust the output to give you precise responses that can enhance the quality of your 
 studying. The flashcards can be liked, saved and stored in decks, giving the students the ability to go back to their notes 
 to review the content.
-## Work in progress 🚧
-- https://github.com/JoaquinCortezHub/Studycards/issues/3
+## Help & Support 😃
+If you like this project and it's useful to you, don't hesitate in forking the repo to adjust it to 
+your liking. Also consider giving the repo a star ⭐, it really helps me keep trying to code more fun stuff.
+
+## Socials & Contact 📞
+If you want to follow me on social media:
+- [Instagram](https://www.instagram.com/joacolcortez/)
+
+Or if you want to contact me:
+- [LinkedIn](https://www.linkedin.com/in/joaquín-cortez/?locale=en_US)
+- joaquinlucascortez@gmail.com
 
