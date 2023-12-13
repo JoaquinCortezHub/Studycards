@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+
 
 function App() {
   const [backendData, setBackendData] = useState([]);
@@ -54,7 +57,8 @@ function App() {
         value={newUser}
         onChange={(e) => setNewUser(e.target.value)}
         />
-        <button onClick={handleAddUser}>Add User</button>
+        {' '}
+        <Button onClick={handleAddUser} variant="primary">Add User</Button>
       </div>
       {backendData.lenght === 0 ? (
         <p>Loading...</p>
