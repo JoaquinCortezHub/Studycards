@@ -16,6 +16,11 @@ app.post('/api/addUser', (req, res) => {
     res.json(backendData);
 });
 
+app.post('/api/submit', express.json(), (req, res) => {
+    const userInput = req.body.paragraph;
+    res.json( {confirmation: `Text received ${userInput}`} )
+})
+
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

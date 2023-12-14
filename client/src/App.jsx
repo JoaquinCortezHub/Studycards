@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-
+import InputForm from './components/InputForm';
 
 function App() {
   const [backendData, setBackendData] = useState([]);
-  const [newUser, setNewUser] = useState('');
 
   //* <-- GET Request.
   useEffect(() => {
@@ -23,51 +21,43 @@ function App() {
       });
   }, []);
 
-  //* <-- Gets called when the submit button is pressed and handles POST requests.
-  const handleAddUser = () => {
-    if(newUser.trim() !== '') {
-      fetch('/api/addUser', { //* <-- Gives the server the correct parameters.
+
+  const handleSubmit = async (userInput) => {
+    console.log("User Input: ", userInput);
+    try {
+      const response = await fetch('/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ newUser }),
-      })
-      .then(response => response.json())
-      .then( data => {
-        if(Array.isArray(data.users)) {
-          setBackendData(data.users);
-          setNewUser('');
-        }
-        else {
-          console.error("Data is in the wrong format: ", data);
-        }
-      })
-      .catch(error => {
-        console.error("Error adding user: ", error);
-      })
+        body: JSON.stringify({paragraph: userInput}),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.confirmation);
+      }
+      else {
+        console.error('Failed to submit data');
+      }
     }
-  }
+    catch (error) {
+      console.error('Error: ', error);
+    }
+  };
+
 
   return (
     <div>
-      <div>
-        <input 
-        type="text"
-        value={newUser}
-        onChange={(e) => setNewUser(e.target.value)}
-        />
-        {' '}
-        <Button onClick={handleAddUser} variant="primary">Add User</Button>
+      <div className='container'>
+      <h1 className='text-align'>
+        StudyCards
+      </h1>
+      <br />
+      <InputForm onSubmit={handleSubmit} />
       </div>
-      {backendData.lenght === 0 ? (
-        <p>Loading...</p>
-      ) : (
-        backendData.map((user, i) => (
-          <p key={i}> {user} </p>
-        ))
-      )}
     </div>
+        
   );
 }
 
