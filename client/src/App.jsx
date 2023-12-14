@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import InputForm from './components/InputForm';
+import DataRenderer from './components/DataRenderer';
 
 function App() {
   const [backendData, setBackendData] = useState([]);
+  const [receivedData, setReceivedData] = useState('');
 
   //* <-- GET Request.
   useEffect(() => {
@@ -21,9 +23,8 @@ function App() {
       });
   }, []);
 
-
-  const handleSubmit = async (userInput) => {
-    console.log("User Input: ", userInput);
+//* <== Sends POST requests to the server, then retrieves the response.
+  const handleSubmit = async (userInput) => { 
     try {
       const response = await fetch('/api/submit', {
         method: 'POST',
@@ -35,7 +36,7 @@ function App() {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data.confirmation);
+        setReceivedData(data.confirmation);
       }
       else {
         console.error('Failed to submit data');
@@ -50,10 +51,12 @@ function App() {
   return (
     <div>
       <div className='container'>
-      <h1 className='text-align'>
+      <h1 className='text-center mt-4'>
         StudyCards
       </h1>
       <br />
+      <DataRenderer receivedData={receivedData} />
+      <hr />
       <InputForm onSubmit={handleSubmit} />
       </div>
     </div>

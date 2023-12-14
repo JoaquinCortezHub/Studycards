@@ -16,7 +16,8 @@ const InputForm = ({onSubmit}) => {
                     value={paragraph}
                     onChange={(e) => setParagraph(e.target.value)}
                     placeholder='Enter your notes'
-                    style={{ width: '100%', height: '300px' }}
+                    className='form-control rounded'
+                    style={{ height: '200px' }}
                 >
                 </textarea>
                 <br />

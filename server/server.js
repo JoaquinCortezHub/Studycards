@@ -10,16 +10,10 @@ app.get("/api", (req, res) => {
     res.json(backendData);
 });
 
-app.post('/api/addUser', (req, res) => {
-    const { newUser } = req.body;
-    backendData = { "users": [...backendData.users, newUser] };
-    res.json(backendData);
-});
-
 app.post('/api/submit', express.json(), (req, res) => {
     const userInput = req.body.paragraph;
-    res.json( {confirmation: `Text received ${userInput}`} )
-})
+    res.json( {confirmation: userInput} )
+});
 
 const PORT = 5000;
 app.listen(PORT, () => {
