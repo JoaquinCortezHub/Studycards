@@ -6,6 +6,8 @@ import DataRenderer from './components/DataRenderer';
 function App() {
   const [backendData, setBackendData] = useState([]);
   const [receivedData, setReceivedData] = useState('');
+  const [summarizedData, setSummarizedData] = useState('');
+
 
   //* <-- GET Request.
   useEffect(() => {
@@ -37,6 +39,7 @@ function App() {
       if (response.ok) {
         const data = await response.json();
         setReceivedData(data.confirmation);
+        setSummarizedData(data.summarizedText); 
       }
       else {
         console.error('Failed to submit data');

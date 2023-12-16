@@ -1,6 +1,6 @@
 import React from "react";
 
-const DataRenderer = ({receivedData}) => {
+const DataRenderer = ({summarizedData}) => {
     const divStyle = {
         border: '2px solid #333', 
         padding: '10px',
@@ -14,7 +14,7 @@ const DataRenderer = ({receivedData}) => {
             className="form-control rounded"
             style={divStyle}
         >
-            <p>Your input was: {receivedData}</p>
+            <p>{summarizedData}</p>
         </div>
     );
 };
